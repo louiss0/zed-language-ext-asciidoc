@@ -3,24 +3,4 @@ grammar = "asciidoc"
 path_suffixes = ["adoc", "asciidoc", "acd"]
 line_comments = ["// "]
 hard_tabs = false
-completion_query_characters = ["-"]
-autoclose_before = ";:.,=}])> "
-brackets = [
-    { start = "{", end = "}", close = true, newline = true },
-    { start = "[", end = "]", close = true, newline = true },
-    { start = "(", end = ")", close = true, newline = true },
-    { start = "<", end = ">", close = true, newline = true },
-    { start = "\"", end = "\"", close = false, newline = false },
-    { start = "'", end = "'", close = false, newline = false },
-    { start = "`", end = "`", close = false, newline = false },
-]
-rewrap_prefixes = [
-    "[-*+]\\s+",
-    "\\d+\\.\\s+",
-    ">\\s*",
-    "[-*+]\\s+\\[[\\sx]\\]\\s+",
-]
-
-auto_indent_on_paste = false
-auto_indent_using_last_non_empty_line = false
 tab_size = 2
