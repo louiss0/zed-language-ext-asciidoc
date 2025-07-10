@@ -19,5 +19,5 @@ license = "MIT"
 bugs = { url = "https://github.com/louiss0/zed-language-ext-asciidoc/issues" }
 
 [grammars.asciidoc]
-repository = "https://github.com/cathaysia/tree-sitter-asciidoc"
-commit = "736ab072da132283b5d9397100d70f14b4fb71ae"
+repository = "https://github.com/cpkio/tree-sitter-asciidoc.git"
+commit = "95ac471564c5cfcc8cbe940bbb4cb6aafa24f395"
