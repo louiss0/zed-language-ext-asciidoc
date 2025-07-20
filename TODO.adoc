@@ -1,0 +1,130 @@
+= TODO
+
+== Bugs
+
+[CAUTION]
+.TaploFormatIssue
+====
+
+File: extension.toml
+Line: Email format in authors field causes Taplo validation issues
+Description:
+• Email format with angle brackets may cause TOML parsing errors
+• Consider simplifying authors field format for better TOML compatibility
+• **Status**: Identified but not yet fixed - user can manually fix if needed
+====
+
+[CAUTION]
+.HighlightDocumentationClutter  
+====
+
+File: grammars/asciidoc/queries/highlights.scm
+Lines: 1-246 contained extensive commented documentation
+Description:
+• **Status**: FIXED ✅
+• Removed 246 lines of documentation comments  
+• File reduced from 437 lines to 222 lines
+• Now contains only actual Tree-sitter query patterns
+• Added clear section headers for organization
+====
+
+[CAUTION]
+.InvalidTreeSitterCaptures
+====
+
+File: grammars/asciidoc/queries/highlights.scm
+Lines: Previously 296-300, 432
+Description:
+• **Status**: FIXED ✅
+• Fixed non-standard captures like `@label.note`, `@label.tip` 
+• Fixed invalid `@image` capture
+• Replaced with proper Tree-sitter standard captures
+• Enhanced admonition highlighting with semantic colors
+====
+
+== Refactors
+
+[WARNING]
+.HighlightFileCleanup
+====
+
+File: grammars/asciidoc/queries/highlights.scm
+Description:
+• **Status**: COMPLETED ✅
+• Removed all 246 lines of commented documentation
+• Added clear section headers and organization
+• File now focused purely on Tree-sitter query patterns
+• Improved maintainability and readability
+====
+
+[WARNING]
+.ImproveTextEmphasisMapping
+====
+
+File: grammars/asciidoc/queries/highlights.scm
+Description:
+• **Status**: COMPLETED ✅
+• Fixed monospace highlighting to use `@markup.raw` instead of `@text.quote`
+• Enhanced inline code and literal text distinction
+• Improved semantic accuracy of highlighting captures
+====
+
+== Features
+
+[IMPORTANT]
+.EnhancedAdmonitionHighlighting
+====
+
+File: grammars/asciidoc/queries/highlights.scm
+Lines: 54-58
+Description:
+• **Status**: COMPLETED ✅
+• Implemented semantic highlighting for different admonition types:
+  - NOTE, TIP: `@comment.note` (info styling)
+  - IMPORTANT, CAUTION: `@comment.warning` (warning styling) 
+  - WARNING: `@comment.error` (error styling)
+• Provides visual distinction between admonition severity levels
+====
+
+[IMPORTANT]
+.AddMissingUrlHighlighting
+====
+
+File: grammars/asciidoc/queries/highlights.scm
+Lines: 194-197
+Description:
+• **Status**: COMPLETED ✅
+• Enabled HTTP and email URL highlighting
+• Used proper `@string.special.url` capture for web links
+• URLs and email addresses now properly highlighted
+====
+
+[IMPORTANT]
+.EnhancedBlockAndListHighlighting
+====
+
+File: grammars/asciidoc/queries/highlights.scm
+Lines: 151-196
+Description:
+• **Status**: NEWLY ADDED ✅
+• Added specific highlighting for different block types:
+  - Code blocks: `@markup.raw.block`
+  - Quotes: `@markup.quote`  
+  - Tables: `@punctuation.bracket`
+  - Examples: `@punctuation.special`
+• Enhanced list highlighting with `@markup.list` patterns
+• Added macro highlighting with `@function.macro`
+• Improved visual distinction between AsciiDoc elements
+====
+
+[IMPORTANT]
+.TestGrammarCompilation
+====
+
+File: grammars/asciidoc/
+Description:
+• Test Tree-sitter grammar compilation with `tree-sitter generate`
+• Verify no syntax errors in grammar.js files
+• Run `tree-sitter test` if test cases exist
+• Ensure grammar works with Zed's Tree-sitter integration
+====
