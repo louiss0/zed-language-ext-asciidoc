@@ -1,6 +1,6 @@
-id = "the-code-fixer-23-asciidoc"
+id = "the-code-fixer-23 asciidoc"
 name = "The Code Fixer AsciiDoc"
-version = "1.0.0"
+version = "1.0.1"
 schema_version = 1
 authors = ["Shelton Louis <louisshelton0@gmail.com>"]
 description = "Support for AsciiDoc syntax"
